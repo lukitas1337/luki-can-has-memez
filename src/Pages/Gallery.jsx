@@ -1,10 +1,25 @@
-const Gallery = () => {
-    return (
-    <>
-    <h1>Check Deez Memez</h1>
-    <p>I like good memez and I can not lie.</p>
-    </>
-)
-}
+import { useContext } from 'react';
+import { MemeContext } from '../context/MemeContext';
 
-export default Gallery
+const Gallery = () => {
+  const { state } = useContext(MemeContext);
+
+  return (
+    <div className="gallery">
+      <h1>Saved Memes</h1>
+      {state.savedMemes.length ? (
+        state.savedMemes.map((meme, index) => (
+          <div key={index} className="meme">
+            <img src={meme.url} alt={meme.name} />
+            <p>{meme.topText}</p>
+            <p>{meme.bottomText}</p>
+          </div>
+        ))
+      ) : (
+        <p>No saved memes yet.</p>
+      )}
+    </div>
+  );
+};
+
+export default Gallery;
