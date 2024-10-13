@@ -14,6 +14,7 @@ const Navbar = () => {
   };
 
   return (
+    <>
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
@@ -58,6 +59,13 @@ const Navbar = () => {
         </label>
       </div>
     </div>
+            <div className="form-control">
+            <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+          </div>
+          <div className="flex w-full flex-col">
+  <div className="divider"></div>
+</div>
+          </>
   );
 };
 
