@@ -5,10 +5,6 @@ import { ThemeContext } from "../context/ThemeContext";
 const Navbar = () => {
   const { theme, changeTheme } = useContext(ThemeContext);
 
-  // Check if theme and changeTheme are being correctly accessed
-  console.log('Current theme:', theme);
-  console.log('Change theme function:', changeTheme);
-
   const handleToggle = (e) => {
     if (e.target.checked) {
       changeTheme('synthwave'); // Switch to dark theme when checked
@@ -67,13 +63,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <label className="label cursor-pointer">
+      <label className="label cursor-pointer">
           <span className="label-text">Theme: {theme === 'synthwave' ? 'Synthwave' : 'Acid'}</span>
           <input
             type="checkbox"
             className="toggle border-blue-500 bg-blue-500 [--tglbg:yellow] hover:bg-blue-700"
             onChange={handleToggle}
-            checked={theme === 'synthwave'} // Checked when dark theme is active
+            checked={theme === 'synthwave'} // Make sure the toggle reflects the current theme
           />
         </label>
       </div>
