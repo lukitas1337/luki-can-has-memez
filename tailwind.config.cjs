@@ -11,7 +11,7 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ["acid","light","dark"],
+    themes: ["acid","synthwave"],
   },
   darkMode: ['class', '[data-theme="night"]']
 }

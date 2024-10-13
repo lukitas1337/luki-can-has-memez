@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import Gallery from './Pages/Gallery';
 import { useContext } from 'react'; 
 import { ThemeContext } from './context/ThemeContext';  
+import Navbar from './Components/Navbar';
 
 
 function App() {
@@ -12,29 +13,18 @@ const { theme, changeTheme } = useContext(ThemeContext);  // Access theme and ch
 
 
   return (
-<Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/ma-mima-memez">Gallery</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <select value={theme} onChange={(e) => changeTheme(e.target.value)} className="select select-bordered w-full max-w-xs">
-          <option value="acid">ACID</option>
-          <option value="dark">DARK</option>
-          <option value="light">LIGHT</option>
-        </select>
-
+    <>
+    <Router>
+      <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ma-mima-memez" element={<Gallery />} />
+        <Route path="/ma-mema-needs-memez" element={<Gallery />} />
       </Routes>
     </Router>
+
+
+
+    </>
   )
 }
 
